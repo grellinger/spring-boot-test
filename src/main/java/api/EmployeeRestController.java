@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import repository.Employee;
 import service.EmployeeService;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
  @SpringBootApplication
  @RestController
  @RequestMapping("/api")
- @ComponentScan("service")
+ @ComponentScan(basePackages = {"service", "repository"})
  public class EmployeeRestController {
 
     @Autowired
@@ -30,7 +31,7 @@ import java.util.List;
      }
 
     @GetMapping("/employees")
-    public List<String> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 }
