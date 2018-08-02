@@ -1,18 +1,21 @@
 package service;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import repository.Employee;
+import repository.EmployeeRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@Repository
+@Service
 public class EmployeeService {
-    public List<String> getAllEmployees() {
 
-        String[] employees = { "Soujit", "Kieran", "Pinkesh", "Graham" };
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
-        return Arrays.asList(employees);
+    public List<Employee> getAllEmployees() {
+
+        return employeeRepository.getEmployees();
     }
 }
 
