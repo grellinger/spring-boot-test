@@ -25,11 +25,6 @@ import java.util.List;
          SpringApplication.run(EmployeeRestController.class, args);
      }
 
-     @RequestMapping("/")
-     public String index(){
-         return "hello";
-     }
-
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
