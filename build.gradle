@@ -24,6 +24,8 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.projectlombok:lombok:1.18.8")
+
     testCompile("junit:junit")
     testCompile group: 'org.assertj', name: 'assertj-core', version: '1.0.0'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.4.RELEASE'
